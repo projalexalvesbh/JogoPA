@@ -52,9 +52,9 @@ public class StartGame : MonoBehaviour
 
         Animator animator = obj.GetComponent<Animator>();
 
-        animator.SetBool("andando", true);
+        //animator.SetBool("roboFire", true);
 
-        andar(sr, PlayerTransform);
+        andar(sr, PlayerTransform, obj);
 
         //animator.SetBool("atirando", true);
 
@@ -71,15 +71,22 @@ public class StartGame : MonoBehaviour
 
         Transform PlayerTransform = obj.GetComponent<Transform>();
 
-        andar(sr, PlayerTransform);
+        
+        andar(sr, PlayerTransform, obj);
 
     }
 
-    void andar(SpriteRenderer playerSpriteRenderer, Transform playerTransform)
+    void andar(SpriteRenderer playerSpriteRenderer, Transform playerTransform, GameObject go)
     {
-        float velocidade = 0.03f;
+        float velocidade = 0.04f;
 
         int direcao = 1;
+
+        if (go.GetComponent<Animator>().GetBool("roboDie"))
+        {
+            //GetComponent<Animator>().SetBool("roboDie", true);
+            return;
+        }
 
         if (playerSpriteRenderer.flipX)
         {

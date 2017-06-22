@@ -18,7 +18,7 @@ public class CptoBala : MonoBehaviour
 
         Rigidbody2D rigidbody3 = gameObject.GetComponent<Rigidbody2D>();
 
-        rigidbody3.AddForce(gameObject.transform.right * 50, ForceMode2D.Impulse);
+        rigidbody3.AddForce(gameObject.transform.right * 50 * direcao, ForceMode2D.Force);
     }
 
     void Update()
@@ -31,18 +31,15 @@ public class CptoBala : MonoBehaviour
     {
         Debug.logger.Log("Colidiu !!");
 
-        Destroy(inimigoCollider.gameObject);
+        inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboFire", false);
 
-        Destroy(gameObject);
+        inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboAndando", false);
 
-    }
-
-    private void OnTriggerEnter2D(Collider2D inimigoCollider)
-    {
-        Debug.logger.Log("Colidiu !!");
+        inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboDie", true);
 
         Destroy(inimigoCollider.gameObject);
 
         Destroy(gameObject);
     }
+    
 }

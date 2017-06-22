@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetButton("Horizontal"))
         {
-            float velocidade = 0.04f;
+            float velocidade = 0.05f;
 
             andando = true;
             if (Input.GetAxisRaw("Horizontal") > 0 && playerTransform.position.x < 4.7)
