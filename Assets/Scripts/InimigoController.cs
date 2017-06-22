@@ -10,8 +10,6 @@ public class InimigoController : MonoBehaviour {
 
     public Animator animator;
 
-    public Rigidbody2D playerRigidbody;
-
     public SpriteRenderer playerSpriteRenderer;
 
     public BoxCollider2D playerBoxCollider;

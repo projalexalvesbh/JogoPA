@@ -7,6 +7,7 @@ public class StartGame : MonoBehaviour {
     public GameObject objeto;
     public List<GameObject> objetos = new List<GameObject>();
     float timeLeft = 3f;
+    
 
     // Use this for initialization
     void Start() {
@@ -28,40 +29,29 @@ public class StartGame : MonoBehaviour {
 
         foreach (GameObject element in objetos)
         {
-
+            
             andar(element);
         }
     }
 
     GameObject criarObjeto()
     {
-        Vector3 vec = new Vector3(4.7f, -1.63f);
+        Vector3 vec = new Vector3(4.7f, -1.63f, 0f);
 
         GameObject obj = Instantiate(objeto, vec, new Quaternion()) as GameObject;
-        SpriteRenderer sr = (SpriteRenderer)obj.GetComponent<SpriteRenderer>();
 
-        Animator animator = obj.GetComponent<Animator>();
+        SpriteRenderer sr = (SpriteRenderer)obj.GetComponent<SpriteRenderer>();
 
         Transform PlayerTransform = obj.GetComponent<Transform>();
 
-        BoxCollider2D playerBoxCollider = (BoxCollider2D)obj.GetComponent<BoxCollider2D>();
+        Animator animator = obj.GetComponent<Animator>();
 
         animator.SetBool("andando", true);
 
-        andar(sr, PlayerTransform, playerBoxCollider);
+        andar(sr, PlayerTransform);
 
-        //animator.SetBool("atirando", atirando);
-
-
-        float variacao = Random.Range(0.06f, 0.8f);
-
-        playerBoxCollider.offset = new Vector2(playerBoxCollider.offset.x, -.5f - (variacao / 2));
-        playerBoxCollider.size = new Vector2(playerBoxCollider.size.x, variacao);
-
-        PlayerController pc = (PlayerController)obj.GetComponent<PlayerController>();
-
-        Destroy(pc);
-
+        //animator.SetBool("atirando", true);
+        
         sr.flipX = true;
 
         return obj;
@@ -75,31 +65,42 @@ public class StartGame : MonoBehaviour {
 
         Transform PlayerTransform = obj.GetComponent<Transform>();
 
-        BoxCollider2D playerBoxCollider = (BoxCollider2D)obj.GetComponent<BoxCollider2D>();
-
-        andar(sr, PlayerTransform, playerBoxCollider);
+        andar(sr, PlayerTransform);
 
     }
 
-    void andar(SpriteRenderer playerSpriteRenderer, Transform PlayerTransform, BoxCollider2D playerBoxCollider)
+    void andar(SpriteRenderer playerSpriteRenderer, Transform playerTransform)
     {
         float velocidade = 0.03f;
 
-        PlayerTransform.position = new Vector3(PlayerTransform.position.x - velocidade, PlayerTransform.position.y);
+        int direcao = 1;
 
-
-        if (playerSpriteRenderer.flipX && playerBoxCollider.size.y < 0.8f)
+        if (playerSpriteRenderer.flipX)
         {
-            playerBoxCollider.offset = new Vector2(playerBoxCollider.offset.x, playerBoxCollider.offset.y - 0.01f);
-            playerBoxCollider.size = new Vector2(playerBoxCollider.size.x, playerBoxCollider.size.y + 0.02f);
-        }
+            direcao = -1;
 
-        if (!playerSpriteRenderer.flipX && playerBoxCollider.size.y > 0.06f)
+            if (playerTransform.position.x >= 4.7)
+            {
+                playerSpriteRenderer.flipX = true;
+            }
+            if (playerTransform.position.x <= -4.7)
+            {
+                playerSpriteRenderer.flipX = false;
+            }
+        }
+        else
         {
-            playerBoxCollider.offset = new Vector2(playerBoxCollider.offset.x, playerBoxCollider.offset.y + 0.01f);
-            playerBoxCollider.size = new Vector2(playerBoxCollider.size.x, playerBoxCollider.size.y - 0.02f);
+            direcao = 1;
+            if (playerTransform.position.x <= -4.7)
+            {
+                playerSpriteRenderer.flipX = false;
+            }
+            if (playerTransform.position.x >= 4.7)
+            {
+                playerSpriteRenderer.flipX = true;
+            }
         }
-
+        playerTransform.position = new Vector3(playerTransform.position.x + (velocidade * direcao), playerTransform.position.y);
     }
 }
 

@@ -2,34 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CptoBala : MonoBehaviour {
+public class CptoBala : MonoBehaviour
+{
 
-    public Rigidbody2D rigidbody;
+    public Rigidbody2D rigidbody2;
 
     // Use this for initialization
-    void Start () {
-        GameObject player = GameObject.Find("player");
+    void Start()
+    {
 
-        rigidbody = gameObject.GetComponent<Rigidbody2D>();
+        Debug.logger.Log("iniciou !!");
+
+        GameObject player = GameObject.Find("player");
 
         float direcao = player.GetComponent<SpriteRenderer>().flipX ? -1 : 1;
 
-        rigidbody.AddForce(new Vector3(direcao,0) * 500);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+        rigidbody2.AddForce(new Vector3(direcao, 0) * 500);
+    }
 
-        Destroy(gameObject, 1.5f);
-	}
-
-    private void OnTriggerEnter(Collider inimigoCollider)
+    void Update()
     {
-        //if (inimigoCollider.GetComponent<Collider>().tag == "Inimigo")
-        //{
-            Destroy(inimigoCollider.gameObject);
 
-            Destroy(gameObject);
-        //}
+        Destroy(gameObject, 2.5f);
+    }
+
+    private void OnTriggerEnter2D(Collider2D inimigoCollider)
+    {
+        Debug.logger.Log("Colidiu !!");
+
+        Destroy(inimigoCollider.gameObject);
+
+        Destroy(gameObject);
     }
 }
