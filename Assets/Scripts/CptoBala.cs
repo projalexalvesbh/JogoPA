@@ -18,28 +18,33 @@ public class CptoBala : MonoBehaviour
 
         Rigidbody2D rigidbody3 = gameObject.GetComponent<Rigidbody2D>();
 
-        rigidbody3.AddForce(gameObject.transform.right * 50 * direcao, ForceMode2D.Force);
+        rigidbody3.AddForce(gameObject.transform.right * 150 * direcao, ForceMode2D.Force);
     }
 
     void Update()
     {
 
-        Destroy(gameObject, 2.5f);
+        Destroy(gameObject, 5.5f);
     }
 
     private void OnCollisionEnter2D(Collision2D inimigoCollider)
     {
-        Debug.logger.Log("Colidiu !!");
+        Debug.logger.Log("Colidiu !!" + inimigoCollider.gameObject.tag);
 
-        inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboFire", false);
+        if(inimigoCollider.gameObject.tag.Equals("Robo")){
 
-        inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboAndando", false);
+            inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboFire", false);
 
-        inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboDie", true);
+            inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboAndando", false);
 
-        Destroy(inimigoCollider.gameObject);
+            inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboDie", true);
 
-        Destroy(gameObject);
+            new WaitForSeconds(10f);
+
+            Destroy(inimigoCollider.gameObject, inimigoCollider.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1f);
+
+            Destroy(gameObject);
+        }
     }
-    
+
 }

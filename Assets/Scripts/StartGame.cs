@@ -17,7 +17,7 @@ public class StartGame : MonoBehaviour
 
         GameObject go = criarObjeto();
 
-        objetos.Add(go);
+        //objetos.Add(go);
     }
 
     // Update is called once per frame
@@ -30,14 +30,6 @@ public class StartGame : MonoBehaviour
 
             timeLeft = 9f;
         }
-
-        foreach (GameObject element in objetos)
-        {
-            if (element != null)
-            {
-                andar(element);
-            }
-        }
     }
 
     GameObject criarObjeto()
@@ -46,75 +38,11 @@ public class StartGame : MonoBehaviour
 
         GameObject obj = Instantiate(objeto, vec, new Quaternion()) as GameObject;
 
-        SpriteRenderer sr = (SpriteRenderer)obj.GetComponent<SpriteRenderer>();
-
-        Transform PlayerTransform = obj.GetComponent<Transform>();
-
-        Animator animator = obj.GetComponent<Animator>();
-
-        //animator.SetBool("roboFire", true);
-
-        andar(sr, PlayerTransform, obj);
-
-        //animator.SetBool("atirando", true);
-
-        sr.flipX = true;
-
         return obj;
     }
 
 
-    void andar(GameObject obj)
-    {
-
-        SpriteRenderer sr = (SpriteRenderer)obj.GetComponent<SpriteRenderer>();
-
-        Transform PlayerTransform = obj.GetComponent<Transform>();
-
-        
-        andar(sr, PlayerTransform, obj);
-
-    }
-
-    void andar(SpriteRenderer playerSpriteRenderer, Transform playerTransform, GameObject go)
-    {
-        float velocidade = 0.04f;
-
-        int direcao = 1;
-
-        if (go.GetComponent<Animator>().GetBool("roboDie"))
-        {
-            //GetComponent<Animator>().SetBool("roboDie", true);
-            return;
-        }
-
-        if (playerSpriteRenderer.flipX)
-        {
-            direcao = -1;
-
-            if (playerTransform.position.x >= 4.7)
-            {
-                playerSpriteRenderer.flipX = true;
-            }
-            if (playerTransform.position.x <= -4.7)
-            {
-                playerSpriteRenderer.flipX = false;
-            }
-        }
-        else
-        {
-            direcao = 1;
-            if (playerTransform.position.x <= -4.7)
-            {
-                playerSpriteRenderer.flipX = false;
-            }
-            if (playerTransform.position.x >= 4.7)
-            {
-                playerSpriteRenderer.flipX = true;
-            }
-        }
-        playerTransform.position = new Vector3(playerTransform.position.x + (velocidade * direcao), playerTransform.position.y);
-    }
+    
 }
 
 

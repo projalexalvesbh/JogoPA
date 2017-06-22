@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
 
             atirando = true;
 
-            Instantiate(bala, playerTransform.position, Quaternion.identity);
+            Instantiate(bala, new Vector2(playerTransform.position.x + (0.35f * (playerTransform.GetComponent<SpriteRenderer>().flipX ? -1f : 1f)), playerTransform.position.y + 0.1f), Quaternion.identity);
         }
 
         if (Input.GetButtonUp("tiro"))
