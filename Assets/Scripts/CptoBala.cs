@@ -18,7 +18,7 @@ public class CptoBala : MonoBehaviour
 
         Rigidbody2D rigidbody3 = gameObject.GetComponent<Rigidbody2D>();
 
-        rigidbody3.AddForce(gameObject.transform.right * 500);
+        rigidbody3.AddForce(gameObject.transform.right * 50, ForceMode2D.Impulse);
     }
 
     void Update()

@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartGame : MonoBehaviour {
+public class StartGame : MonoBehaviour
+{
+
 
     public GameObject objeto;
     public List<GameObject> objetos = new List<GameObject>();
     float timeLeft = 3f;
-    
+
 
     // Use this for initialization
-    void Start() {
+    void Start()
+    {
 
         GameObject go = criarObjeto();
 
@@ -18,7 +21,8 @@ public class StartGame : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update() {
+    void Update()
+    {
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
@@ -29,8 +33,10 @@ public class StartGame : MonoBehaviour {
 
         foreach (GameObject element in objetos)
         {
-            
-            andar(element);
+            if (element != null)
+            {
+                andar(element);
+            }
         }
     }
 
@@ -51,7 +57,7 @@ public class StartGame : MonoBehaviour {
         andar(sr, PlayerTransform);
 
         //animator.SetBool("atirando", true);
-        
+
         sr.flipX = true;
 
         return obj;
