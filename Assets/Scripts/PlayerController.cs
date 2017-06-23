@@ -19,9 +19,33 @@ public class PlayerController : MonoBehaviour {
     public bool atirando;
     public bool andando;
 
+    int vida = 100;
+
     // Use this for initialization
     void Start () {
 	}
+
+    void setDano(int dano)
+    {
+        vida -= dano;
+        //Destroy(inimigoCollider.gameObject.GetComponent<Rigidbody2D>());
+
+        Debug.logger.Log("VIDA - " + vida);
+
+        if (vida <= 0)
+        {
+
+            animator.SetBool("morrendo", true);
+
+            Destroy(gameObject, gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1f);
+        }
+        //gameObject.GetComponent<Animator>().SetBool("roboFire", false);
+
+        //gameObject.GetComponent<Animator>().SetBool("roboAndando", false);
+
+        //gameObject.GetComponent<Animator>().SetBool("roboDie", true);
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -30,7 +54,9 @@ public class PlayerController : MonoBehaviour {
 
             atirando = true;
 
-            Instantiate(bala, new Vector2(playerTransform.position.x + (0.35f * (playerTransform.GetComponent<SpriteRenderer>().flipX ? -1f : 1f)), playerTransform.position.y + 0.1f), Quaternion.identity);
+            Transform tiro = Instantiate(bala, new Vector2(playerTransform.position.x + (0.35f * (playerTransform.GetComponent<SpriteRenderer>().flipX ? -1f : 1f)), playerTransform.position.y + 0.1f), Quaternion.identity);
+
+            tiro.SendMessage("setPlayer", gameObject);
         }
 
         if (Input.GetButtonUp("tiro"))
@@ -88,5 +114,17 @@ public class PlayerController : MonoBehaviour {
 
         animator.SetBool("atirando", atirando);
         animator.SetBool("andando", andando);
+    }
+
+    private void OnCollisionEnter2D(Collision2D inimigoCollider)
+    {
+        Debug.logger.Log("Colisao" + inimigoCollider.gameObject.tag);
+
+        if (!inimigoCollider.gameObject.name.StartsWith("balaRobo"))
+        {
+
+            Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);
+            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
+        }
     }
 }

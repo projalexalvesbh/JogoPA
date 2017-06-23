@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class StartGame : MonoBehaviour
 {
-
-
     public GameObject objeto;
-    public List<GameObject> objetos = new List<GameObject>();
+    
     float timeLeft = 3f;
 
 
@@ -15,9 +13,7 @@ public class StartGame : MonoBehaviour
     void Start()
     {
 
-        GameObject go = criarObjeto();
-
-        //objetos.Add(go);
+        criarObjeto();
     }
 
     // Update is called once per frame
@@ -26,7 +22,7 @@ public class StartGame : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
-            objetos.Add(criarObjeto());
+            criarObjeto();
 
             timeLeft = 9f;
         }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class RoboScript : MonoBehaviour
 {
 
+    public Transform bala;
+
     float timeLeft = 3f;
 
     // Use this for initialization
@@ -15,13 +17,7 @@ public class RoboScript : MonoBehaviour
 
         Transform PlayerTransform = gameObject.GetComponent<Transform>();
 
-        Animator animator = gameObject.GetComponent<Animator>();
-
-        //animator.SetBool("roboFire", true);
-
         andar();
-
-        //animator.SetBool("atirando", true);
 
         sr.flipX = true;
 
@@ -31,9 +27,22 @@ public class RoboScript : MonoBehaviour
     void Update()
     {
 
-        andar();
-    }
+        timeLeft -= Time.deltaTime;
+        if (timeLeft < 0)
+        {
+            gameObject.GetComponent<Animator>().SetBool("roboFire", true);
 
+            atirar();
+
+            timeLeft = 3f;
+        }
+        else
+        {
+            gameObject.GetComponent<Animator>().SetBool("roboAndando", true);
+
+            andar();
+        }
+    }
 
     void andar()
     {
@@ -77,15 +86,20 @@ public class RoboScript : MonoBehaviour
         transform.position = new Vector3(transform.position.x + (velocidade * direcao), transform.position.y);
     }
 
+    void atirar()
+    {
+        Transform tiro = Instantiate(bala, new Vector2(transform.position.x + (0.35f * (transform.GetComponent<SpriteRenderer>().flipX ? -1f : 1f)), transform.position.y + 0.1f), Quaternion.identity);
+
+        tiro.SendMessage("setPlayer", gameObject);
+    }
+
     private void OnCollisionEnter2D(Collision2D inimigoCollider)
     {
-        Debug.logger.Log("Colisao" + inimigoCollider.gameObject.tag);
-
-        if (inimigoCollider.gameObject.tag == "Robo")
+        if (inimigoCollider.gameObject.tag.StartsWith("Robo"))
         {
-
-            Debug.logger.Log("Colisao robos");
+   
             Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);
+            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
         }
     }
 }
