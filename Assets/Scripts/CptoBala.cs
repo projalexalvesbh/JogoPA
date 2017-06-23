@@ -46,8 +46,27 @@ public class CptoBala : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D inimigoCollider)
     {
+        if (inimigoCollider.gameObject.name.StartsWith("bala") && inimigoCollider.otherCollider.gameObject.name.StartsWith("bala"))
+        {
 
-        if (inimigoCollider.gameObject.name.Equals("Robo(Clone)") && inimigoCollider.otherCollider.gameObject.name.Equals("bala(Clone)"))
+            Destroy(inimigoCollider.gameObject);
+            Destroy(inimigoCollider.otherCollider.gameObject);
+
+            
+        }
+        else if (inimigoCollider.gameObject.name.StartsWith("Robo") && inimigoCollider.otherCollider.gameObject.name.StartsWith("balaRobo"))
+        {
+
+            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
+            Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);
+
+            if (!inimigoCollider.gameObject.Equals(player))
+            {
+
+                Destroy(inimigoCollider.otherCollider.gameObject);
+            }
+
+        }else if (inimigoCollider.gameObject.name.Equals("Robo(Clone)") && inimigoCollider.otherCollider.gameObject.name.Equals("bala(Clone)"))
         {
             Debug.logger.Log("Player: " + inimigoCollider.gameObject.name);
 
@@ -62,11 +81,8 @@ public class CptoBala : MonoBehaviour
             Destroy(inimigoCollider.gameObject, inimigoCollider.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1f);
 
             Destroy(gameObject);
-        }
-        else
-        {
-            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
-            Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);
+
+            return;
         }
 
 
@@ -78,6 +94,8 @@ public class CptoBala : MonoBehaviour
             inimigoCollider.gameObject.SendMessage("setDano", 10);
 
             Destroy(gameObject);
+
+            return;
         }
         else
         {
@@ -86,15 +104,6 @@ public class CptoBala : MonoBehaviour
         }
 
 
-        if (inimigoCollider.gameObject.name.StartsWith("bala") && inimigoCollider.otherCollider.gameObject.name.StartsWith("bala"))
-        {
-
-            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
-            Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);
-
-            Destroy(inimigoCollider.gameObject);
-            Destroy(inimigoCollider.otherCollider.gameObject);
-        }
     }
 }
 

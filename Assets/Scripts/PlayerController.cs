@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
     public bool atirando;
     public bool andando;
 
-    int vida = 100;
+    int vida = 50;
 
     // Use this for initialization
     void Start () {

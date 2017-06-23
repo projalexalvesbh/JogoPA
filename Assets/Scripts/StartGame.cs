@@ -29,8 +29,11 @@ public class StartGame : MonoBehaviour
     }
 
     GameObject criarObjeto()
+
     {
-        Vector3 vec = new Vector3(4.7f, -1.63f, 0f);
+        float direcao = Random.Range(-1f, 1f);
+
+        Vector3 vec = new Vector3( (direcao>=0 ? 4.7f : -4.7f), Random.Range(- 1.63f , -2.58f), 0f);
 
         GameObject obj = Instantiate(objeto, vec, new Quaternion()) as GameObject;
 

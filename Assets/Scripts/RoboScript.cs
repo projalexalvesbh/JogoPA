@@ -15,8 +15,6 @@ public class RoboScript : MonoBehaviour
 
         SpriteRenderer sr = (SpriteRenderer)gameObject.GetComponent<SpriteRenderer>();
 
-        Transform PlayerTransform = gameObject.GetComponent<Transform>();
-
         andar();
 
         sr.flipX = true;
