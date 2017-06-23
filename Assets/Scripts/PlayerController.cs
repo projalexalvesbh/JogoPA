@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
 
     public Transform bala;
 
+    public GameObject barraVida;
+
     public Animator animator;
 
     public Rigidbody2D playerRigidbody;
@@ -19,20 +21,27 @@ public class PlayerController : MonoBehaviour {
     public bool atirando;
     public bool andando;
 
-    int vida = 50;
+    float vidaAtual;
+
+    float vida = 100;
 
     // Use this for initialization
     void Start () {
-	}
+
+        vidaAtual = vida;
+
+    }
 
     void setDano(int dano)
     {
-        vida -= dano;
+        vidaAtual -= dano;
         //Destroy(inimigoCollider.gameObject.GetComponent<Rigidbody2D>());
 
-        Debug.logger.Log("VIDA - " + vida);
+        Debug.logger.Log("VIDA - " + vidaAtual);
 
-        if (vida <= 0)
+        barraVida.SendMessage("setVida", vidaAtual / vida);
+
+        if (vidaAtual <= 0)
         {
 
             animator.SetBool("morrendo", true);
@@ -46,9 +55,9 @@ public class PlayerController : MonoBehaviour {
         //gameObject.GetComponent<Animator>().SetBool("roboDie", true);
 
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if (Input.GetButtonDown("tiro"))
         {
 

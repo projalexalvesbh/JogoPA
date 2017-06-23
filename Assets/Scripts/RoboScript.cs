@@ -7,7 +7,7 @@ public class RoboScript : MonoBehaviour
 
     public Transform bala;
 
-    float timeLeft = 3f;
+    float timeLeft = 2f;
 
     // Use this for initialization
     void Start()
@@ -25,20 +25,22 @@ public class RoboScript : MonoBehaviour
     void Update()
     {
 
-        timeLeft -= Time.deltaTime;
-        if (timeLeft < 0)
+        if (!gameObject.GetComponent<Animator>().GetBool("roboDie"))
         {
-            gameObject.GetComponent<Animator>().SetBool("roboFire", true);
+            timeLeft -= Time.deltaTime;
+            if (timeLeft < 0)
+            {
 
-            atirar();
+                atirar();
 
-            timeLeft = 3f;
-        }
-        else
-        {
-            gameObject.GetComponent<Animator>().SetBool("roboAndando", true);
+                timeLeft = 2f;
+            }
+            else
+            {
+                gameObject.GetComponent<Animator>().SetBool("roboAndando", true);
 
-            andar();
+                andar();
+            }
         }
     }
 
@@ -86,6 +88,8 @@ public class RoboScript : MonoBehaviour
 
     void atirar()
     {
+        gameObject.GetComponent<Animator>().SetBool("roboFire", true);
+
         Transform tiro = Instantiate(bala, new Vector2(transform.position.x + (0.35f * (transform.GetComponent<SpriteRenderer>().flipX ? -1f : 1f)), transform.position.y + 0.1f), Quaternion.identity);
 
         tiro.SendMessage("setPlayer", gameObject);
@@ -95,7 +99,7 @@ public class RoboScript : MonoBehaviour
     {
         if (inimigoCollider.gameObject.tag.StartsWith("Robo"))
         {
-   
+
             Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);
             Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
         }

@@ -24,7 +24,7 @@ public class StartGame : MonoBehaviour
         {
             criarObjeto();
 
-            timeLeft = 9f;
+            timeLeft = 5f;
         }
     }
 

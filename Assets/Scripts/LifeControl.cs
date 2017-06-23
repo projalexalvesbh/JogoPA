@@ -6,11 +6,16 @@ public class LifeControl : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		GetComponent<Renderer>().material.color = new Color(255, 0, 0);
-	}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+
+    public void setVida(float indiceVida)
+    {
+        transform.localScale = new Vector3(indiceVida, 1, 1);
+    }
 }

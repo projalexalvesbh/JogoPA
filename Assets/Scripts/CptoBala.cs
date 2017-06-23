@@ -51,8 +51,6 @@ public class CptoBala : MonoBehaviour
 
             Destroy(inimigoCollider.gameObject);
             Destroy(inimigoCollider.otherCollider.gameObject);
-
-            
         }
         else if (inimigoCollider.gameObject.name.StartsWith("Robo") && inimigoCollider.otherCollider.gameObject.name.StartsWith("balaRobo"))
         {
