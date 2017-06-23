@@ -1,0 +1,552 @@
+fileFormatVersion: 2
+guid: 89a3c23c8aeb0ec41bf5b09fee05bd63
+timeCreated: 1495986596
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: modern soldier spritesheet small_0
+    21300002: modern soldier spritesheet small_1
+    21300004: modern soldier spritesheet small_2
+    21300006: modern soldier spritesheet small_3
+    21300008: modern soldier spritesheet small_4
+    21300010: modern soldier spritesheet small_5
+    21300012: modern soldier spritesheet small_6
+    21300014: modern soldier spritesheet small_7
+    21300016: modern soldier spritesheet small_8
+    21300018: modern soldier spritesheet small_9
+    21300020: modern soldier spritesheet small_10
+    21300022: modern soldier spritesheet small_11
+    21300024: modern soldier spritesheet small_12
+    21300026: modern soldier spritesheet small_13
+    21300028: modern soldier spritesheet small_14
+    21300030: modern soldier spritesheet small_15
+    21300032: modern soldier spritesheet small_16
+    21300034: modern soldier spritesheet small_17
+    21300036: modern soldier spritesheet small_18
+    21300038: modern soldier spritesheet small_19
+    21300040: modern soldier spritesheet small_20
+    21300042: modern soldier spritesheet small_21
+    21300044: modern soldier spritesheet small_22
+    21300046: modern soldier spritesheet small_23
+    21300048: modern soldier spritesheet small_24
+    21300050: modern soldier spritesheet small_25
+    21300052: modern soldier spritesheet small_26
+    21300054: modern soldier spritesheet small_27
+    21300056: modern soldier spritesheet small_28
+    21300058: modern soldier spritesheet small_29
+    21300060: modern soldier spritesheet small_30
+    21300062: modern soldier spritesheet small_31
+    21300064: modern soldier spritesheet small_32
+    21300066: modern soldier spritesheet small_33
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_0
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 396
+        width: 48
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_1
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 409
+        width: 56
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_2
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 411
+        width: 53
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_3
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 411
+        width: 62
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_4
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 412
+        width: 48
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_5
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 412
+        width: 50
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_6
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 412
+        width: 52
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_7
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 412
+        width: 69
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_8
+      rect:
+        serializedVersion: 2
+        x: 446
+        y: 483
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_9
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 490
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_10
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 412
+        width: 52
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_11
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 377
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 304
+        width: 64
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_13
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 384
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_14
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 308
+        width: 42
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_15
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 308
+        width: 49
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_16
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 308
+        width: 48
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_17
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 308
+        width: 58
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_18
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 308
+        width: 60
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_19
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 309
+        width: 60
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_20
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 309
+        width: 61
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_21
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 319
+        width: 44
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_22
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 209
+        width: 68
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_23
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 209
+        width: 64
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_24
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 209
+        width: 65
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_25
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 209
+        width: 65
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_26
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 208
+        width: 68
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_27
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 112
+        width: 72
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_28
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 208
+        width: 74
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_29
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 111
+        width: 73
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_30
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 111
+        width: 76
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_31
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 113
+        width: 53
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_32
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 112
+        width: 60
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: modern soldier spritesheet small_33
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 112
+        width: 60
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

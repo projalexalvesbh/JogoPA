@@ -1,0 +1,865 @@
+fileFormatVersion: 2
+guid: b0cdddf84d99d384c8378d9f6e61dc56
+timeCreated: 1498238853
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: hero_spritesheet_0
+    21300002: hero_spritesheet_1
+    21300004: hero_spritesheet_2
+    21300006: hero_spritesheet_3
+    21300008: hero_spritesheet_4
+    21300010: hero_spritesheet_5
+    21300012: hero_spritesheet_6
+    21300014: hero_spritesheet_7
+    21300016: hero_spritesheet_8
+    21300018: hero_spritesheet_9
+    21300020: hero_spritesheet_10
+    21300022: hero_spritesheet_11
+    21300024: hero_spritesheet_12
+    21300026: hero_spritesheet_13
+    21300028: hero_spritesheet_14
+    21300030: hero_spritesheet_15
+    21300032: hero_spritesheet_16
+    21300034: hero_spritesheet_17
+    21300036: hero_spritesheet_18
+    21300038: hero_spritesheet_19
+    21300040: hero_spritesheet_20
+    21300042: hero_spritesheet_21
+    21300044: hero_spritesheet_22
+    21300046: hero_spritesheet_23
+    21300048: hero_spritesheet_24
+    21300050: hero_spritesheet_25
+    21300052: hero_spritesheet_26
+    21300054: hero_spritesheet_27
+    21300056: hero_spritesheet_28
+    21300058: hero_spritesheet_29
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hero_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 387
+        width: 57
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 387
+        width: 59
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 387
+        width: 58
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 387
+        width: 56
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 387
+        width: 54
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 387
+        width: 57
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 387
+        width: 58
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 387
+        width: 58
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 288
+        width: 49
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 289
+        width: 55
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 289
+        width: 51
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 287
+        width: 39
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 288
+        width: 36
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 289
+        width: 39
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 194
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 196
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_16
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 197
+        width: 59
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_17
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 196
+        width: 54
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_18
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 197
+        width: 55
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_19
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 198
+        width: 59
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 107
+        width: 65
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 108
+        width: 66
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 115
+        width: 66
+        height: 58
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 276
+        y: 107
+        width: 47
+        height: 73
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 108
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 116
+        width: 81
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 107
+        width: 81
+        height: 23
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 17
+        width: 60
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 18
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: hero_spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 328
+        width: 43
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline:
+    - - {x: -300, y: -160}
+      - {x: -300, y: -218}
+      - {x: -298, y: -220}
+      - {x: -250, y: -220}
+      - {x: -236, y: -199}
+      - {x: -236, y: -169}
+      - {x: -256, y: -160}
+    - - {x: -216, y: -159}
+      - {x: -225, y: -177}
+      - {x: -225, y: -206}
+      - {x: -213, y: -219}
+      - {x: -162, y: -219}
+      - {x: -160, y: -215}
+      - {x: -160, y: -160}
+      - {x: -164, y: -159}
+    - - {x: -281, y: -130}
+      - {x: -260, y: -130}
+      - {x: -243, y: -97}
+      - {x: -243, y: -61}
+      - {x: -298, y: -61}
+      - {x: -312, y: -81}
+      - {x: -312, y: -116}
+      - {x: -303, y: -116}
+      - {x: -298, y: -115}
+      - {x: -298, y: -114}
+      - {x: -300, y: -124}
+      - {x: -298, y: -130}
+      - {x: -286, y: -130}
+      - {x: -283, y: -127}
+      - {x: -283, y: -126}
+      - {x: -283, y: -128}
+    - - {x: -34, y: -53}
+      - {x: -46, y: -61}
+      - {x: -46, y: -119}
+      - {x: -38, y: -130}
+      - {x: -7, y: -130}
+      - {x: 5, y: -111}
+      - {x: 5, y: -81}
+      - {x: -8, y: -53}
+    - - {x: 256, y: -111}
+      - {x: 231, y: -103}
+      - {x: 186, y: -103}
+      - {x: 182, y: -107}
+      - {x: 182, y: -123}
+      - {x: 186, y: -130}
+      - {x: 265, y: -130}
+      - {x: 267, y: -121}
+      - {x: 267, y: -113}
+      - {x: 265, y: -110}
+    - - {x: -212, y: -61}
+      - {x: -230, y: -87}
+      - {x: -230, y: -113}
+      - {x: -228, y: -115}
+      - {x: -221, y: -113}
+      - {x: -215, y: -111}
+      - {x: -212, y: -108}
+      - {x: -212, y: -105}
+      - {x: -209, y: -105}
+      - {x: -214, y: -111}
+      - {x: -215, y: -121}
+      - {x: -210, y: -129}
+      - {x: -174, y: -129}
+      - {x: -160, y: -107}
+      - {x: -160, y: -70}
+      - {x: -166, y: -61}
+    - - {x: 50, y: -53}
+      - {x: 32, y: -53}
+      - {x: 27, y: -55}
+      - {x: 21, y: -71}
+      - {x: 21, y: -93}
+      - {x: 27, y: -118}
+      - {x: 53, y: -129}
+      - {x: 73, y: -129}
+      - {x: 77, y: -121}
+      - {x: 77, y: -76}
+      - {x: 74, y: -62}
+    - - {x: -111, y: -60}
+      - {x: -128, y: -64}
+      - {x: -149, y: -95}
+      - {x: -149, y: -115}
+      - {x: -136, y: -122}
+      - {x: -95, y: -122}
+      - {x: -79, y: -104}
+      - {x: -79, y: -75}
+      - {x: -101, y: -60}
+    - - {x: 91, y: -78}
+      - {x: 91, y: -105}
+      - {x: 96, y: -117}
+      - {x: 111, y: -118}
+      - {x: 142, y: -121}
+      - {x: 174, y: -121}
+      - {x: 176, y: -119}
+      - {x: 176, y: -91}
+      - {x: 154, y: -78}
+    - - {x: -244, y: 12}
+      - {x: -258, y: 12}
+      - {x: -262, y: 8}
+      - {x: -262, y: 23}
+      - {x: -264, y: 28}
+      - {x: -293, y: 28}
+      - {x: -300, y: 26}
+      - {x: -300, y: -39}
+      - {x: -299, y: -42}
+      - {x: -297, y: -43}
+      - {x: -270, y: -43}
+      - {x: -266, y: -42}
+      - {x: -242, y: 0}
+      - {x: -242, y: 10}
+    - - {x: -168, y: 30}
+      - {x: -218, y: 30}
+      - {x: -220, y: 29}
+      - {x: -220, y: -41}
+      - {x: -183, y: -41}
+      - {x: -173, y: -36}
+      - {x: -162, y: 0}
+      - {x: -162, y: 21}
+    - - {x: -61, y: 30}
+      - {x: -61, y: -40}
+      - {x: -56, y: -41}
+      - {x: -23, y: -41}
+      - {x: -3, y: -7}
+      - {x: -3, y: 27}
+      - {x: -11, y: 30}
+    - - {x: -128, y: -40}
+      - {x: -102, y: -40}
+      - {x: -83, y: 5}
+      - {x: -83, y: 12}
+      - {x: -85, y: 14}
+      - {x: -99, y: 14}
+      - {x: -99, y: 27}
+      - {x: -105, y: 30}
+      - {x: -135, y: 30}
+      - {x: -146, y: 19}
+      - {x: -146, y: -33}
+      - {x: -139, y: -40}
+      - {x: -134, y: -40}
+      - {x: -129, y: -36}
+      - {x: -129, y: -32}
+      - {x: -129, y: -38}
+    - - {x: 77, y: 30}
+      - {x: 18, y: 30}
+      - {x: 18, y: -40}
+      - {x: 56, y: -40}
+      - {x: 61, y: -33}
+      - {x: 77, y: 3}
+    - - {x: 98, y: 30}
+      - {x: 93, y: 24}
+      - {x: 93, y: -39}
+      - {x: 137, y: -39}
+      - {x: 156, y: -24}
+      - {x: 156, y: 28}
+      - {x: 153, y: 30}
+    - - {x: -44, y: 123}
+      - {x: -60, y: 116}
+      - {x: -60, y: 63}
+      - {x: -56, y: 50}
+      - {x: -28, y: 50}
+      - {x: -25, y: 51}
+      - {x: -17, y: 78}
+      - {x: -17, y: 108}
+      - {x: -26, y: 123}
+    - - {x: -268, y: 122}
+      - {x: -294, y: 122}
+      - {x: -299, y: 120}
+      - {x: -303, y: 109}
+      - {x: -303, y: 64}
+      - {x: -296, y: 51}
+      - {x: -268, y: 51}
+      - {x: -265, y: 52}
+      - {x: -252, y: 79}
+      - {x: -250, y: 84}
+      - {x: -250, y: 116}
+    - - {x: 19, y: 123}
+      - {x: 19, y: 51}
+      - {x: 58, y: 51}
+      - {x: 59, y: 52}
+      - {x: 59, y: 123}
+    - - {x: -209, y: 123}
+      - {x: -224, y: 118}
+      - {x: -230, y: 80}
+      - {x: -230, y: 67}
+      - {x: -225, y: 52}
+      - {x: -175, y: 52}
+      - {x: -171, y: 73}
+      - {x: -171, y: 123}
+    - - {x: -105, y: 123}
+      - {x: -118, y: 123}
+      - {x: -124, y: 122}
+      - {x: -129, y: 120}
+      - {x: -139, y: 114}
+      - {x: -146, y: 83}
+      - {x: -146, y: 57}
+      - {x: -133, y: 52}
+      - {x: -128, y: 52}
+      - {x: -128, y: 60}
+      - {x: -128, y: 56}
+      - {x: -126, y: 52}
+      - {x: -104, y: 52}
+      - {x: -91, y: 89}
+      - {x: -91, y: 96}
+      - {x: -93, y: 105}
+    - - {x: 103, y: 123}
+      - {x: 96, y: 119}
+      - {x: 95, y: 102}
+      - {x: 95, y: 57}
+      - {x: 103, y: 52}
+      - {x: 134, y: 52}
+      - {x: 138, y: 55}
+      - {x: 138, y: 123}
+    - - {x: -281, y: 150}
+      - {x: -260, y: 150}
+      - {x: -251, y: 200}
+      - {x: -251, y: 208}
+      - {x: -255, y: 211}
+      - {x: -262, y: 208}
+      - {x: -270, y: 199}
+      - {x: -264, y: 206}
+      - {x: -261, y: 215}
+      - {x: -271, y: 219}
+      - {x: -303, y: 219}
+      - {x: -312, y: 181}
+      - {x: -312, y: 166}
+      - {x: -308, y: 164}
+      - {x: -299, y: 166}
+      - {x: -295, y: 171}
+      - {x: -300, y: 156}
+      - {x: -298, y: 150}
+      - {x: -286, y: 150}
+      - {x: -283, y: 153}
+      - {x: -283, y: 154}
+      - {x: -283, y: 152}
+    - - {x: -201, y: 150}
+      - {x: -186, y: 150}
+      - {x: -170, y: 161}
+      - {x: -167, y: 185}
+      - {x: -167, y: 219}
+      - {x: -183, y: 205}
+      - {x: -190, y: 197}
+      - {x: -189, y: 191}
+      - {x: -191, y: 193}
+      - {x: -190, y: 199}
+      - {x: -184, y: 206}
+      - {x: -181, y: 215}
+      - {x: -191, y: 219}
+      - {x: -213, y: 219}
+      - {x: -220, y: 217}
+      - {x: -230, y: 200}
+      - {x: -230, y: 150}
+      - {x: -206, y: 150}
+      - {x: -203, y: 153}
+      - {x: -203, y: 154}
+      - {x: -203, y: 152}
+    - - {x: -121, y: 150}
+      - {x: -100, y: 150}
+      - {x: -86, y: 187}
+      - {x: -86, y: 203}
+      - {x: -87, y: 207}
+      - {x: -97, y: 205}
+      - {x: -108, y: 199}
+      - {x: -108, y: 191}
+      - {x: -110, y: 199}
+      - {x: -101, y: 204}
+      - {x: -104, y: 219}
+      - {x: -141, y: 219}
+      - {x: -148, y: 199}
+      - {x: -148, y: 153}
+      - {x: -146, y: 150}
+      - {x: -126, y: 150}
+      - {x: -123, y: 153}
+      - {x: -123, y: 154}
+      - {x: -123, y: 152}
+    - - {x: -41, y: 150}
+      - {x: -20, y: 150}
+      - {x: -6, y: 183}
+      - {x: -6, y: 204}
+      - {x: -7, y: 207}
+      - {x: -17, y: 205}
+      - {x: -28, y: 199}
+      - {x: -28, y: 191}
+      - {x: -29, y: 204}
+      - {x: -25, y: 202}
+      - {x: -22, y: 214}
+      - {x: -26, y: 219}
+      - {x: -52, y: 219}
+      - {x: -60, y: 216}
+      - {x: -66, y: 182}
+      - {x: -66, y: 160}
+      - {x: -61, y: 150}
+      - {x: -46, y: 150}
+      - {x: -43, y: 153}
+      - {x: -43, y: 154}
+      - {x: -43, y: 152}
+    - - {x: 39, y: 150}
+      - {x: 60, y: 150}
+      - {x: 74, y: 170}
+      - {x: 74, y: 211}
+      - {x: 68, y: 219}
+      - {x: 28, y: 219}
+      - {x: 22, y: 216}
+      - {x: 16, y: 202}
+      - {x: 16, y: 150}
+      - {x: 34, y: 150}
+      - {x: 37, y: 153}
+      - {x: 37, y: 154}
+      - {x: 37, y: 152}
+    - - {x: 119, y: 150}
+      - {x: 140, y: 150}
+      - {x: 154, y: 189}
+      - {x: 154, y: 201}
+      - {x: 153, y: 207}
+      - {x: 143, y: 205}
+      - {x: 132, y: 199}
+      - {x: 132, y: 191}
+      - {x: 131, y: 204}
+      - {x: 135, y: 202}
+      - {x: 140, y: 215}
+      - {x: 130, y: 219}
+      - {x: 113, y: 219}
+      - {x: 102, y: 212}
+      - {x: 93, y: 194}
+      - {x: 93, y: 162}
+      - {x: 96, y: 150}
+      - {x: 115, y: 150}
+      - {x: 117, y: 153}
+      - {x: 117, y: 154}
+      - {x: 117, y: 152}
+    - - {x: 199, y: 150}
+      - {x: 220, y: 150}
+      - {x: 234, y: 182}
+      - {x: 234, y: 205}
+      - {x: 233, y: 208}
+      - {x: 223, y: 205}
+      - {x: 212, y: 199}
+      - {x: 212, y: 191}
+      - {x: 211, y: 204}
+      - {x: 215, y: 202}
+      - {x: 220, y: 215}
+      - {x: 208, y: 219}
+      - {x: 194, y: 219}
+      - {x: 189, y: 217}
+      - {x: 183, y: 212}
+      - {x: 172, y: 174}
+      - {x: 172, y: 164}
+      - {x: 181, y: 150}
+      - {x: 194, y: 150}
+      - {x: 197, y: 153}
+      - {x: 197, y: 154}
+      - {x: 197, y: 152}
+    - - {x: 279, y: 150}
+      - {x: 300, y: 150}
+      - {x: 312, y: 193}
+      - {x: 312, y: 203}
+      - {x: 311, y: 209}
+      - {x: 297, y: 205}
+      - {x: 290, y: 197}
+      - {x: 291, y: 191}
+      - {x: 289, y: 193}
+      - {x: 290, y: 199}
+      - {x: 296, y: 206}
+      - {x: 296, y: 213}
+      - {x: 295, y: 219}
+      - {x: 268, y: 219}
+      - {x: 258, y: 218}
+      - {x: 250, y: 188}
+      - {x: 250, y: 153}
+      - {x: 258, y: 150}
+      - {x: 277, y: 150}
+      - {x: 277, y: 154}
+      - {x: 277, y: 152}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
