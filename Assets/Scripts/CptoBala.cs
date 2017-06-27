@@ -76,6 +76,8 @@ public class CptoBala : MonoBehaviour
 
             inimigoCollider.gameObject.GetComponent<Animator>().SetBool("roboDie", true);
 
+            player.gameObject.SendMessage("setPontos", 100);
+
             Destroy(inimigoCollider.gameObject, inimigoCollider.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1f);
 
             Destroy(gameObject);

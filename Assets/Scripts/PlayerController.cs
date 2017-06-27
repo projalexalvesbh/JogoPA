@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -18,6 +19,10 @@ public class PlayerController : MonoBehaviour {
 
     public BoxCollider2D playerBoxCollider;
 
+    public Text pontos;
+
+    float pontosContador = 0;
+
     public bool atirando;
     public bool andando;
 
@@ -30,6 +35,13 @@ public class PlayerController : MonoBehaviour {
 
         vidaAtual = vida;
 
+    }
+
+    void setPontos(float ponto)
+    {
+        pontosContador += ponto;
+
+        pontos.text = pontosContador.ToString();
     }
 
     void setDano(int dano)
