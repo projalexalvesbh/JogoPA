@@ -93,15 +93,13 @@ public class StartGame : MonoBehaviour
                     else
                     {
                         //Application.LoadLevel(Application.loadedLevel);
-                        fimJogo.text = "Fim de Jogo !";
+                        fimJogo.text = "Parabéns. Você venceu!";
 
                         Time.timeScale = 0;
 
                         btnReiniciar.gameObject.SetActive(true);
 
                         btnReiniciar.onClick.AddListener(delegate { reiniciar(); });
-
-                        Application.Quit();
                     }
 
                     fase++;
