@@ -18,7 +18,6 @@ public class RoboScript : MonoBehaviour
         andar();
 
         sr.flipX = true;
-
     }
 
     // Update is called once per frame
@@ -92,12 +91,23 @@ public class RoboScript : MonoBehaviour
 
         Transform tiro = Instantiate(bala, new Vector2(transform.position.x + (0.35f * (transform.GetComponent<SpriteRenderer>().flipX ? -1f : 1f)), transform.position.y + 0.1f), Quaternion.identity);
 
+        Physics2D.IgnoreCollision(tiro.GetComponent<Collider2D>() ,GetComponent<Collider2D>(), true);
+
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Robo");
+
+        foreach (GameObject objects in objs)
+        {
+
+            Physics2D.IgnoreCollision(tiro.GetComponent<Collider2D>(), objects.GetComponent<Collider2D>(), true);
+        }
+
+
         tiro.SendMessage("setPlayer", gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D inimigoCollider)
     {
-        if (inimigoCollider.gameObject.tag.StartsWith("Robo"))
+        if (!inimigoCollider.gameObject.tag.StartsWith("balaPlayer"))
         {
 
             Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);

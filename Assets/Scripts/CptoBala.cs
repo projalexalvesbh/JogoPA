@@ -41,32 +41,45 @@ public class CptoBala : MonoBehaviour
 
         rigidbody3.AddForce(new Vector3(1, 0) * 250 * direcao, ForceMode2D.Force);
 
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("bala");
+
+        foreach (GameObject objects in objs)
+        {
+            Physics2D.IgnoreCollision(GetComponent<Collider2D>(), objects.GetComponent<Collider2D>(), true);
+            Physics2D.IgnoreCollision(objects.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
+        }
         Destroy(gameObject, 5.5f);
     }
 
     private void OnCollisionEnter2D(Collision2D inimigoCollider)
     {
-        if (inimigoCollider.gameObject.name.StartsWith("bala") && inimigoCollider.otherCollider.gameObject.name.StartsWith("bala"))
+
+        Debug.logger.Log("Atirador: " + player.tag);
+
+        Debug.logger.Log("NAME INIMIGO: " + inimigoCollider.gameObject.name + " : NAME GAMEOBJECT: " + gameObject.name);
+
+        if ((inimigoCollider.gameObject.name.StartsWith("Robo") && !player.tag.Equals("Player")) ||
+            (inimigoCollider.gameObject.name.StartsWith("Player") && !player.name.StartsWith("Robo")))
         {
 
-            Destroy(inimigoCollider.gameObject);
-            Destroy(inimigoCollider.otherCollider.gameObject);
+            Debug.logger.Log("Ignorar: Inimigo errado!");
+            Physics2D.IgnoreCollision(inimigoCollider.collider, GetComponent<Collider2D>(), true);
+            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, GetComponent<Collider2D>(), true);
         }
-        else if (inimigoCollider.gameObject.name.StartsWith("Robo") && inimigoCollider.otherCollider.gameObject.name.StartsWith("balaRobo"))
+        else if (inimigoCollider.gameObject.name.StartsWith("bala"))
         {
 
-            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
-            Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);
+            Debug.logger.Log("Ignorar: Entre Balas");
 
-            if (!inimigoCollider.gameObject.Equals(player))
-            {
+            Physics2D.IgnoreCollision(inimigoCollider.collider, GetComponent<Collider2D>(), true);
+            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, GetComponent<Collider2D>(), true);
 
-                Destroy(inimigoCollider.otherCollider.gameObject);
-            }
-
-        }else if (inimigoCollider.gameObject.name.Equals("Robo(Clone)") && inimigoCollider.otherCollider.gameObject.name.Equals("bala(Clone)"))
+            //Destroy(inimigoCollider.gameObject);
+            //Destroy(inimigoCollider.otherCollider.gameObject);
+        }
+        else if (inimigoCollider.gameObject.name.StartsWith("Robo") && gameObject.name.StartsWith("balaPlayer"))
         {
-            Debug.logger.Log("Player: " + inimigoCollider.gameObject.name);
+            Debug.logger.Log("Dano: Robo");
 
             Destroy(inimigoCollider.gameObject.GetComponent<Rigidbody2D>());
 
@@ -81,29 +94,24 @@ public class CptoBala : MonoBehaviour
             Destroy(inimigoCollider.gameObject, inimigoCollider.gameObject.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).length + 1f);
 
             Destroy(gameObject);
-
-            return;
         }
-
-
-        if (inimigoCollider.gameObject.name.Equals("player") && inimigoCollider.otherCollider.gameObject.name.StartsWith("balaRobo"))
+        else if (inimigoCollider.gameObject.name.Equals("player") && gameObject.name.StartsWith("balaRobo"))
         {
-
-            Debug.logger.Log("DANO - 10");
+            Debug.logger.Log("Dano: Player");
 
             inimigoCollider.gameObject.SendMessage("setDano", 10);
 
             Destroy(gameObject);
 
-            return;
+            Physics2D.IgnoreCollision(inimigoCollider.collider, GetComponent<Collider2D>(), true);
         }
         else
         {
-            Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
-            Physics2D.IgnoreCollision(inimigoCollider.collider, inimigoCollider.otherCollider, true);
+
+            Debug.logger.Log("Ignorar Tudo");
+            //Physics2D.IgnoreCollision(inimigoCollider.otherCollider, inimigoCollider.collider, true);
+            Physics2D.IgnoreCollision(inimigoCollider.collider, GetComponent<Collider2D>(), true);
         }
-
-
     }
 }
 

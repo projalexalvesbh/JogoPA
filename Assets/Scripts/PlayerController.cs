@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour {
 
     public SpriteRenderer playerSpriteRenderer;
 
-    public BoxCollider2D playerBoxCollider;
-
     public Text pontos;
 
     float pontosContador = 0;
@@ -76,6 +74,8 @@ public class PlayerController : MonoBehaviour {
             atirando = true;
 
             Transform tiro = Instantiate(bala, new Vector2(playerTransform.position.x + (0.35f * (playerTransform.GetComponent<SpriteRenderer>().flipX ? -1f : 1f)), playerTransform.position.y + 0.1f), Quaternion.identity);
+
+            Physics2D.IgnoreCollision(tiro.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true);
 
             tiro.SendMessage("setPlayer", gameObject);
         }
@@ -139,8 +139,6 @@ public class PlayerController : MonoBehaviour {
 
     private void OnCollisionEnter2D(Collision2D inimigoCollider)
     {
-        Debug.logger.Log("Colisao" + inimigoCollider.gameObject.tag);
-
         if (!inimigoCollider.gameObject.name.StartsWith("balaRobo"))
         {
 

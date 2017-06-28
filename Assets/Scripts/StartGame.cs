@@ -20,6 +20,10 @@ public class StartGame : MonoBehaviour
 
     public Button btnReiniciar;
 
+    int limiteFase = 6;
+
+    int quantFase = 2;
+
     int contadorFase1 = 0;
 
     int fase = 1;
@@ -35,8 +39,6 @@ public class StartGame : MonoBehaviour
         btnReiniciar.gameObject.SetActive(false);
 
         timeLeft = timeLeftInicial;
-
-        criarObjeto();
     }
 
     // Update is called once per frame
@@ -53,13 +55,18 @@ public class StartGame : MonoBehaviour
         {
             timeLeftInicial -= timeLeftInicial > 0.3f ? 0.02f : 0f;
 
-            if (contadorFase1 < 5)
+            if (contadorFase1 < limiteFase)
             {
 
                 timeLeft -= Time.deltaTime;
                 if (timeLeft < 0)
                 {
-                    criarObjeto();
+
+                    for (int x = 1; x <= quantFase; x++)
+                    {
+                        criarObjeto();
+
+                    }
 
                     timeLeft = 5f;
                 }
@@ -67,7 +74,7 @@ public class StartGame : MonoBehaviour
             else
             {
 
-                Debug.logger.Log("Contador: " + contadorFase1);
+                //Debug.logger.Log("Contador: " + contadorFase1);
 
                 GameObject gameAux = null;
 
@@ -84,10 +91,18 @@ public class StartGame : MonoBehaviour
                 {
                     if (fase == 1)
                     {
+                        quantFase = 3;
+
+                        limiteFase = 9;
+
                         fundoBeco.transform.position = new Vector3(fundoBeco.transform.position.x, fundoBeco.transform.position.y, fundoBeco.transform.position.z + 0.2f);
                     }
                     else if (fase == 2)
                     {
+                        quantFase = 4;
+
+                        limiteFase = 12;
+
                         fundoBrasil.transform.position = new Vector3(fundoBrasil.transform.position.x, fundoBrasil.transform.position.y, fundoBrasil.transform.position.z + 0.2f);
                     }
                     else
@@ -109,7 +124,7 @@ public class StartGame : MonoBehaviour
                 else
                 {
 
-                    Debug.logger.Log("Encontrou !" + gameAux.name);
+                    //Debug.logger.Log("Encontrou !" + gameAux.name);
                 }
             }
         }
@@ -129,6 +144,9 @@ public class StartGame : MonoBehaviour
         Vector3 vec = new Vector3((direcao >= 0 ? 4.7f : -4.7f), Random.Range(-1.63f, -2.58f), 0f);
 
         GameObject obj = Instantiate(objeto, vec, new Quaternion()) as GameObject;
+
+        Physics2D.IgnoreCollision(player.GetComponent<Collider2D>(), obj.GetComponent<Collider2D>(), true);
+        Physics2D.IgnoreCollision(obj.GetComponent<Collider2D>(), player.GetComponent<Collider2D>(), true);
 
         inimigos.Add(obj);
 
