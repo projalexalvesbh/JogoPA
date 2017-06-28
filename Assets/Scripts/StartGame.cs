@@ -53,7 +53,7 @@ public class StartGame : MonoBehaviour
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
-            timeLeftInicial -= timeLeftInicial > 0.3f ? 0.02f : 0f;
+            timeLeftInicial -= timeLeftInicial > 0.1f ? 0.08f : 0f;
 
             if (contadorFase1 < limiteFase)
             {
@@ -61,10 +61,13 @@ public class StartGame : MonoBehaviour
                 timeLeft -= Time.deltaTime;
                 if (timeLeft < 0)
                 {
+                    float direcao = Random.Range(-1f, 1f);
 
                     for (int x = 1; x <= quantFase; x++)
                     {
-                        criarObjeto();
+                        direcao = direcao  * - 1;
+
+                        criarObjeto(direcao);
 
                     }
 
@@ -136,11 +139,8 @@ public class StartGame : MonoBehaviour
 
         Application.LoadLevel(Application.loadedLevel);
     }
-    GameObject criarObjeto()
-
+    GameObject criarObjeto(float direcao)
     {
-        float direcao = Random.Range(-1f, 1f);
-
         Vector3 vec = new Vector3((direcao >= 0 ? 4.7f : -4.7f), Random.Range(-1.63f, -2.58f), 0f);
 
         GameObject obj = Instantiate(objeto, vec, new Quaternion()) as GameObject;
