@@ -39,7 +39,7 @@ public class Principal {
 		
 		for (int i = 0; i < 12; i++) {
 			
-			System.out.println("\nCarta: " + baralhoSorteado[i].getValorFace());
+			System.out.println("\nCarta: " + baralhoSorteado[i].getValorFace() + " - Peso: " + baralhoSorteado[i].getPeso());
 		}
 	}
 

@@ -19,6 +19,7 @@ public enum Nipes {
 	}
 	
 	public static Nipes getNipe(String sigla) {
+		
 		switch (sigla) {
 		case "P":
 			return Nipes.PAUS;

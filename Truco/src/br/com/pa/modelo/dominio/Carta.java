@@ -73,7 +73,7 @@ public class Carta {
 			break;
 		}
 		
-		return retorno + " - Peso: " + getPeso();
+		return retorno;
 	}
 
 	public int getValor() {
