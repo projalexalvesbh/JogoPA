@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Random;
 
 import br.com.pa.modelo.dominio.Carta;
+import br.com.pa.modelo.dominio.Jogador;
 
 public class Utils {
 	
@@ -33,6 +34,14 @@ public class Utils {
 		}
 		
 		return retorno;
+	}
+	
+	public static void distribuirCartas(int quantidadeCartas, Carta sorteados[], Jogador...jogadores) {
+		
+		for (Jogador jogador : jogadores) {
+			
+		}
+		
 	}
 
 }
