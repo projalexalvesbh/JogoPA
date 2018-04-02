@@ -21,7 +21,7 @@ public class GerenteJogo {
 			if (mao != null) {
 				if (Mao.STATUS_ABERTA.equalsIgnoreCase(mao.getStatus())) {
 
-					Jogada jogada = avaliarAcoesAdversario(mao);
+					Jogada jogada = avaliarAcoesAdversario(rodada, mao, equipe);
 
 					percentual = avaliarCartas(mao.getCartas());
 
@@ -40,26 +40,50 @@ public class GerenteJogo {
 		return null;
 	}
 
-	private static Jogada avaliarAcoesAdversario(Mao mao) {
+	private static Jogada avaliarAcoesAdversario(Rodada rodada, Mao mao, int equipe) {
 
 		Jogada jogada = null;
 		
 		Random random = new Random();
 		
+		Acao aumentarAposta;
+		
 		if (Acao.TRUCAR.equals(mao.getAcaoAdversario())) {
+			
+			aumentarAposta = Acao.SEIS;
+			
 			if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_OTIMA) {
 				
-				jogada = new Jogada(Acao.SEIS, null);
+				jogada = new Jogada(aumentarAposta, null);
 			} else if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_BOA) {
 
-				jogada = new Jogada((random.nextInt(10) > 4 ? Acao.ACEITAR : Acao.CORRER), null);
+				jogada = new Jogada(( random.nextInt(10) > 4 ? Acao.ACEITAR : Acao.CORRER), null);
 			}else {
 				jogada = new Jogada(Acao.CORRER, null);
 			}
+			
 		}if (Acao.SEIS.equals(mao.getAcaoAdversario())) {
+			
+			aumentarAposta = Acao.NOVE;
+			
 			if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_OTIMA) {
 				
-				jogada = new Jogada(Acao.NOVE, null);
+				jogada = new Jogada(aumentarAposta, null);
+			} else if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_BOA) {
+
+				jogada = new Jogada((random.nextInt(10) > 6 ? Acao.ACEITAR : Acao.CORRER), null);
+			}else {
+				
+				jogada = new Jogada(Acao.CORRER, null);
+			}
+			
+		}if (Acao.NOVE.equals(mao.getAcaoAdversario())) {
+			
+			aumentarAposta = Acao.DOZE;
+			
+			if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_OTIMA) {
+				
+				jogada = new Jogada(aumentarAposta, null);
 			} else if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_BOA) {
 
 				jogada = new Jogada((random.nextInt(10) > 6 ? Acao.ACEITAR : Acao.CORRER), null);
@@ -68,6 +92,8 @@ public class GerenteJogo {
 				jogada = new Jogada(Acao.CORRER, null);
 			}
 		}
+		
+		if(rodada.getPontosParaVencer(equipe) < mao.getValor())
 
 		return jogada;
 	}

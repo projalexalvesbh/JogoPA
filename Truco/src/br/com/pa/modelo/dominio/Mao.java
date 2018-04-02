@@ -21,6 +21,8 @@ public class Mao {
 	
 	public int equipeVencedora;
 	
+	public int valor;
+	
 	public Carta[] getCartas() {
 		return cartas;
 	}
@@ -75,5 +77,13 @@ public class Mao {
 
 	public void setEquipeVencedora(int equipeVencedora) {
 		this.equipeVencedora = equipeVencedora;
+	}
+
+	public int getValor() {
+		return valor;
+	}
+
+	public void setValor(int valor) {
+		this.valor = valor;
 	}
 }
