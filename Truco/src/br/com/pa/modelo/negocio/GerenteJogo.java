@@ -93,7 +93,9 @@ public class GerenteJogo {
 			}
 		}
 		
-		if(rodada.getPontosParaVencer(equipe) < mao.getValor())
+		if(rodada.getPontosParaVencer(equipe) < mao.getValor()) {
+			
+		}
 
 		return jogada;
 	}
