@@ -7,6 +7,12 @@ public class Jogada {
 	private Acao acao;
 	
 	private Carta carta;
+	
+	public Jogada(Acao acao, Carta carta) {
+		super();
+		this.acao = acao;
+		this.carta = carta;
+	}
 
 	public Acao getAcao() {
 		return acao;
