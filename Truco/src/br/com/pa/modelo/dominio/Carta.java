@@ -1,8 +1,26 @@
 package br.com.pa.modelo.dominio;
 
+import java.util.Arrays;
+import java.util.List;
+
 import br.com.pa.enums.Nipes;
 
 public class Carta {
+	
+	public static final Carta ZAP = new Carta(4, Nipes.PAUS.name());
+	public static final Carta SETE_COPAS = new Carta(7, Nipes.COPAS.name());
+	public static final Carta ESPADILHA = new Carta(1, Nipes.ESPADA.name());
+	public static final Carta SETE_OUROS = new Carta(7, Nipes.OUROS.name());
+	
+	public static final int CARTA_RUIM = 0;
+	public static final int CARTA_MEDIO = 1;
+	public static final int CARTA_BOA = 2;
+	public static final int CARTA_OTIMA = 3;
+	
+	public static final int VALOR_AS = 1;
+	public static final int VALOR_REI = 10;
+	public static final int VALOR_VALETE = 9;
+	public static final int VALOR_DAMA = 8;
 	
     int valor;
     String nipe;
@@ -19,7 +37,7 @@ public class Carta {
                 valor == 5 || 
                 valor == 6 || 
                 (valor == 7 && (!nipe.equalsIgnoreCase(Nipes.OUROS.getSigla()) && !nipe.equalsIgnoreCase(Nipes.COPAS.getSigla()))) ||
-                (valor >= 8 && valor <= 10)){
+                (valor >= VALOR_DAMA && valor <= VALOR_REI)){
             return valor - 3;
         }
         
@@ -74,6 +92,54 @@ public class Carta {
 		}
 		
 		return retorno;
+	}
+	
+	public int contemEm(Carta[] cartas) {
+		
+		List<Carta> cartasAux = Arrays.asList(cartas);
+		
+		int retorno = -1;
+		
+		for (int i = 0; i < cartasAux.size(); i++) {
+			
+			if (this.valor == cartasAux.get(i).getValor() && this.getNipe().equalsIgnoreCase(cartasAux.get(i).getNipe())) {
+				retorno = i;
+			}
+		}
+		
+		return retorno;
+	}
+	
+	public boolean isContemEm(Carta[] cartas) {
+		
+		return contemEm(cartas) >= 0;
+	}
+	
+	public static int getQualidade(int peso){
+		
+		if(peso <= 7) {
+			return CARTA_RUIM;
+		}else if(peso <= 10) {
+			return CARTA_MEDIO;
+		}else if(peso <= 12) {
+			return CARTA_BOA;
+		}else{
+			return CARTA_OTIMA;
+		}
+	}
+	
+	public static int getQualidade(Carta[] cartas){
+		
+		int peso = 0;
+		
+		float soma = 0;
+		for (Carta carta : cartas) {
+			soma += carta.getPeso();
+		}
+		
+		peso = Math.round(soma / cartas.length);
+		
+		return getQualidade(peso);
 	}
 
 	public int getValor() {
