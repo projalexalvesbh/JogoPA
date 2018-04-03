@@ -28,7 +28,7 @@ public class Rodada {
 		}
 	}
 
-	public void setPontuacaoEquipe1(int equipe, int pontuacaoEquipe) {
+	public void setPontuacaoEquipe(int equipe, int pontuacaoEquipe) {
 		
 		switch (equipe) {
 		case 1:

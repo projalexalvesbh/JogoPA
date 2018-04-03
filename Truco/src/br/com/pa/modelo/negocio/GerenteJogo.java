@@ -5,29 +5,33 @@ import java.util.Random;
 import br.com.pa.enums.Acao;
 import br.com.pa.modelo.dominio.Carta;
 import br.com.pa.modelo.dominio.Jogada;
+import br.com.pa.modelo.dominio.Jogador;
 import br.com.pa.modelo.dominio.Mao;
 import br.com.pa.modelo.dominio.Rodada;
 
 public class GerenteJogo {
 
-	public static Jogada avaliarMao(Rodada rodada, int equipe) {
-
+	public static Jogada avaliarMao(Rodada rodada, int jogador) {
+		
 		int percentual = 0;
 
 		int maosVencidas = 0;
+		
+		Jogada jogada = null;
 
 		for (Mao mao : rodada.getMao()) {
 
 			if (mao != null) {
+				
+				int equipe =  mao.getJogadores()[jogador].getEquipe();
+				
+				Carta[] cartasJogador = mao.getJogadores()[jogador].getJogo();
+				
 				if (Mao.STATUS_ABERTA.equalsIgnoreCase(mao.getStatus())) {
+					
+					jogada = avaliarJogada(rodada, mao, jogador);
 
-					Jogada jogada = avaliarAcoesAdversario(rodada, mao, equipe);
-
-					percentual = avaliarCartas(mao.getCartas());
-
-					avaliarPosicaoRodada(mao.getPosicaoRodada());
-
-					return retornarJogada(maosVencidas, percentual, mao.getCartas());
+					return retornarJogada(maosVencidas, percentual, cartasJogador);
 
 				} else if (Mao.STATUS_ENCERRADA.equalsIgnoreCase(mao.getStatus())
 						&& mao.getEquipeVencedora() == equipe) {
@@ -40,64 +44,216 @@ public class GerenteJogo {
 		return null;
 	}
 
-	private static Jogada avaliarAcoesAdversario(Rodada rodada, Mao mao, int equipe) {
+	private static Jogada avaliarJogada(Rodada rodada, Mao mao, int jogador) {
 
 		Jogada jogada = null;
 		
+		int equipe = mao.getJogadores()[jogador].getEquipe();
+		
+		Carta[] cartasJogador = mao.getJogadores()[jogador].getJogo();
+
 		Random random = new Random();
-		
+
+		float indiceAceitacao = getIndiceAceitar(rodada, equipe);
+
 		Acao aumentarAposta;
-		
+
 		if (Acao.TRUCAR.equals(mao.getAcaoAdversario())) {
-			
+
 			aumentarAposta = Acao.SEIS;
-			
-			if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_OTIMA) {
-				
-				jogada = new Jogada(aumentarAposta, null);
-			} else if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_BOA) {
 
-				jogada = new Jogada(( random.nextInt(10) > 4 ? Acao.ACEITAR : Acao.CORRER), null);
-			}else {
+			if (Carta.getQualidade(cartasJogador) >= Carta.CARTA_OTIMA) {
+
+				jogada = new Jogada(aumentarAposta, null);
+			} else if (Carta.getQualidade(cartasJogador) >= Carta.CARTA_BOA) {
+
+				jogada = new Jogada((random.nextInt(100) > (40 * indiceAceitacao) ? Acao.ACEITAR : Acao.CORRER), null);
+			} else {
 				jogada = new Jogada(Acao.CORRER, null);
 			}
-			
-		}if (Acao.SEIS.equals(mao.getAcaoAdversario())) {
-			
+
+		}
+		if (Acao.SEIS.equals(mao.getAcaoAdversario())) {
+
 			aumentarAposta = Acao.NOVE;
-			
-			if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_OTIMA) {
-				
-				jogada = new Jogada(aumentarAposta, null);
-			} else if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_BOA) {
 
-				jogada = new Jogada((random.nextInt(10) > 6 ? Acao.ACEITAR : Acao.CORRER), null);
-			}else {
-				
+			if (Carta.getQualidade(cartasJogador) >= Carta.CARTA_OTIMA) {
+
+				jogada = new Jogada(aumentarAposta, null);
+			} else if (Carta.getQualidade(cartasJogador) >= Carta.CARTA_BOA) {
+
+				jogada = new Jogada((random.nextInt(100) > (60 * indiceAceitacao) ? Acao.ACEITAR : Acao.CORRER), null);
+			} else {
+
 				jogada = new Jogada(Acao.CORRER, null);
 			}
-			
-		}if (Acao.NOVE.equals(mao.getAcaoAdversario())) {
-			
-			aumentarAposta = Acao.DOZE;
-			
-			if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_OTIMA) {
-				
-				jogada = new Jogada(aumentarAposta, null);
-			} else if (Carta.getQualidade(mao.getCartas()) >= Carta.CARTA_BOA) {
 
-				jogada = new Jogada((random.nextInt(10) > 6 ? Acao.ACEITAR : Acao.CORRER), null);
-			}else {
-				
+		}
+		if (Acao.NOVE.equals(mao.getAcaoAdversario())) {
+
+			aumentarAposta = Acao.DOZE;
+
+			if (Carta.getQualidade(cartasJogador) >= Carta.CARTA_OTIMA) {
+
+				jogada = new Jogada(aumentarAposta, null);
+			} else if (Carta.getQualidade(cartasJogador) >= Carta.CARTA_BOA) {
+
+				jogada = new Jogada((random.nextInt(100) > (50 * indiceAceitacao) ? Acao.ACEITAR : Acao.CORRER), null);
+			} else {
+
 				jogada = new Jogada(Acao.CORRER, null);
 			}
 		}
+
+		if (Acao.DOZE.equals(mao.getAcaoAdversario())) {
+
+			aumentarAposta = Acao.ACEITAR;
+
+			if (Carta.getQualidade(cartasJogador) >= Carta.CARTA_OTIMA) {
+
+				jogada = new Jogada(aumentarAposta, null);
+			} else if (Carta.getQualidade(cartasJogador) >= Carta.CARTA_BOA) {
+
+				jogada = new Jogada((random.nextInt(100) > (30 * indiceAceitacao) ? Acao.ACEITAR : Acao.CORRER), null);
+			} else {
+
+				jogada = new Jogada(Acao.CORRER, null);
+			}
+		}
+
+		if (jogada != null && mao.getAcaoAdversario().getValorAposta() == jogada.getAcao().getValorAposta()
+				&& rodada.getPontosParaVencer(equipe) < mao.getAcaoAdversario().getValorAposta()
+				&& (jogada.getAcao().equals(Acao.ACEITAR) && !mao.getAcaoMesa().equals(Acao.DOZE))) {
+
+			jogada.setAcao(jogada.getAcao().aumentarAposta());
+		}
+
+		if (jogada != null) {
+			return jogada;
+		}
 		
-		if(rodada.getPontosParaVencer(equipe) < mao.getValor()) {
-			
+		if (Acao.JOGAR.equals(mao.getAcaoMesa())) {
+			jogada = avaliarJogadaSimples(rodada, mao, jogador);
 		}
 
 		return jogada;
+	}
+
+	private static Jogada avaliarJogadaSimples(Rodada rodada, Mao mao, int jogador) {
+		
+		Carta cartaJogar = avaliarCartaJogar(jogador, rodada, mao);
+		
+		
+		
+
+		return null;
+	}
+
+	private static Carta avaliarCartaJogar(int jogadorCodigo, Rodada rodada, Mao maoCorrente) {
+		
+		Jogador jogador = maoCorrente.getJogadores()[jogadorCodigo];
+		
+		int indiceMaoCorrente = getIndiceMaoCorrente(rodada);
+		
+		int vitorias = getVitoriasEquipe(rodada, jogador.getEquipe());
+		
+		int posicaoJogador = getPosicaoJogador(maoCorrente);
+		
+		Carta cartaRetorno = null;
+		
+		switch (vitorias) {
+		case 0:
+			
+			switch (indiceMaoCorrente) {
+			case 0:
+				
+				switch (posicaoJogador) {
+				case 0:
+					cartaRetorno = Carta.getMenorCarta(jogador.getJogo());
+					break;
+
+				case 1:
+					cartaRetorno = Carta.getMenorCarta(jogador.getJogo());
+					break;
+
+				case 2:
+					cartaRetorno = Carta.getMenorCarta(jogador.getJogo());
+					break;
+
+				case 3:
+					cartaRetorno = Carta.getMenorCarta(jogador.getJogo());
+					break;
+
+				default:
+					break;
+				}
+				
+				break;
+
+			default:
+				break;
+			}
+			
+			break;
+
+		default:
+			break;
+		}
+		
+		
+		return cartaRetorno;
+	}
+
+	private static float getIndiceAceitar(Rodada rodada, int equipe) {
+
+		int vitorias = getVitoriasEquipe(rodada, equipe);
+
+		float retorno = 1f;
+		
+		if (getMaoCorrente(rodada, equipe) == 1){
+			if (vitorias != 1) {
+
+				retorno = 0.3f;
+			}
+		}
+		return retorno;
+	}
+
+	private static int getVitoriasEquipe(Rodada rodada, int equipe) {
+		int numeroVitorias = 0;
+		for (Mao mao : rodada.getMao()) {
+			if (mao != null && mao.getEquipeVencedora() == equipe) {
+
+				numeroVitorias++;
+			}
+		}
+		return numeroVitorias;
+	}
+
+	private static int getIndiceMaoCorrente(Rodada rodada) {
+
+		int retorno = 0;
+		for (Mao mao : rodada.getMao()) {
+			if (mao != null) {
+
+				retorno++;
+			}
+		}
+		return retorno;
+	}
+	
+	private static int getPosicaoJogador(Mao mao) {
+
+		int retorno = 0;
+		for (int i = 0; i< mao.getCartas().length; i++) {
+			if (mao.getCartas()[i] == null) {
+
+				return retorno;
+			}
+			
+			retorno++;
+		}
+		return retorno;
 	}
 
 	private static Jogada retornarJogada(int maosVencidas, int multiplicador, Carta[] cartas) {

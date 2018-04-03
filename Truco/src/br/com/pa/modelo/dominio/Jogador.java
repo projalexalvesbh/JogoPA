@@ -12,7 +12,7 @@ public class Jogador {
 	
 	private Carta[] jogo;
 	
-	private String equipe;
+	private int equipe;
 
 	public String getTipoAgente() {
 		return tipoAgente;
@@ -30,11 +30,11 @@ public class Jogador {
 		this.jogo = jogo;
 	}
 
-	public String getEquipe() {
+	public int getEquipe() {
 		return equipe;
 	}
 
-	public void setEquipe(String equipe) {
+	public void setEquipe(int equipe) {
 		this.equipe = equipe;
 	}
 	

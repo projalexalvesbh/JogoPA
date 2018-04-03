@@ -7,6 +7,8 @@ public class Mao {
 	public static final String STATUS_ABERTA = "ABERTA";
 	public static final String STATUS_ENCERRADA = "ENCERRADA";
 	
+	private Jogador[] jogadores;
+	
 	private Carta[] cartas;
 
 	private Carta parceiro;
@@ -19,9 +21,17 @@ public class Mao {
 	
 	private String status;
 	
-	public int equipeVencedora;
+	private int equipeVencedora;
 	
-	public int valor;
+	private Acao acaoMesa;
+	
+	public Jogador[] getJogadores() {
+		return jogadores;
+	}
+
+	public void setJogadores(Jogador[] jogadores) {
+		this.jogadores = jogadores;
+	}
 	
 	public Carta[] getCartas() {
 		return cartas;
@@ -79,11 +89,11 @@ public class Mao {
 		this.equipeVencedora = equipeVencedora;
 	}
 
-	public int getValor() {
-		return valor;
+	public Acao getAcaoMesa() {
+		return acaoMesa;
 	}
 
-	public void setValor(int valor) {
-		this.valor = valor;
+	public void setAcaoMesa(Acao acaoMesa) {
+		this.acaoMesa = acaoMesa;
 	}
 }
