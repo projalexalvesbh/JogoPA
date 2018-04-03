@@ -173,11 +173,11 @@ public class GerenteJogo {
 					break;
 
 				case 1:
-					cartaRetorno = Carta.getMenorCarta(jogador.getJogo());
+					cartaRetorno = matarMenorCarta(maoCorrente.getCartas(), jogador.getJogo(), jogador.getEquipe(), indiceMaoCorrente);
 					break;
 
 				case 2:
-					cartaRetorno = Carta.getMenorCarta(jogador.getJogo());
+					cartaRetorno = matarComCartaBoa(maoCorrente.getCartas(), jogador.getJogo(), jogador.getEquipe(), indiceMaoCorrente);
 					break;
 
 				case 3:
@@ -302,5 +302,73 @@ public class GerenteJogo {
 
 		return 1;
 	}
+	
+	public static Carta matarMenorCarta(Carta[] cartaMesa, Carta[] cartasJogador, int equipe, int indiceMaoCorrente) {
 
+		Carta cartaAdversario = Carta.getMaiorCarta(cartaMesa);
+		
+		if(cartaAdversario.getEquipe() != equipe) {
+			return matarCarta(cartaAdversario, cartasJogador);
+		}
+	
+		Carta cartaRetorno = Carta.getMenorCarta(cartasJogador); 
+		
+		if(indiceMaoCorrente > 0) {
+			cartaRetorno.setEncobrirCarta(true);
+		}
+		
+		return cartaRetorno;
+	}
+	
+	public static Carta matarComCartaBoa(Carta[] cartaMesa, Carta[] cartasJogador, int equipe, int indiceMaoCorrente) {
+
+		Carta cartaAdversario = Carta.getMaiorCarta(cartaMesa);
+		
+		if(cartaAdversario.getEquipe() != equipe) {
+			return matarComCartaBoa(cartaAdversario, cartasJogador);
+		}
+	
+		Carta cartaRetorno = Carta.getMenorCarta(cartasJogador); 
+		
+		if(indiceMaoCorrente > 0) {
+			cartaRetorno.setEncobrirCarta(true);
+		}
+		
+		return cartaRetorno;
+	}
+	
+	private static Carta matarCarta(Carta cartaMesa, Carta[] cartasJogador) {
+		
+		Carta cartaRetorno = null;
+		
+		for (Carta carta : cartasJogador) {
+			
+			if(cartaRetorno == null) {
+				if (carta.getValor() >= cartaMesa.getValor()) {
+					cartaRetorno = carta;
+				}
+			}else{
+				if (carta.getValor() >= cartaMesa.getValor() && carta.getValor() < cartaRetorno.getValor()) {
+					cartaRetorno = carta;
+				}
+			}
+		}
+
+		if(cartaRetorno == null) {
+			return Carta.getMenorCarta(cartasJogador);
+		}
+		
+		return null;
+	}
+	
+private static Carta matarComCartaBoa(Carta cartaMesa, Carta[] cartasJogador) {
+		
+		Carta cartaRetorno = matarCarta(cartaMesa, cartasJogador);
+		
+		if(Carta.CARTA_BOA == cartaRetorno.getQualidade()) {
+			return Carta.getMenorCarta(cartasJogador);
+		}
+		
+		return null;
+	}
 }

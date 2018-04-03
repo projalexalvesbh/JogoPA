@@ -143,6 +143,11 @@ public class Carta {
 
 		return getQualidade(peso);
 	}
+	
+	public int getQualidade() {
+
+		return getQualidade(getPeso());
+	}
 
 	public static Carta getMaiorCarta(Carta[] carta) {
 
@@ -174,48 +179,6 @@ public class Carta {
 		return cartaRetorno;
 	}
 	
-	
-	public static Carta matarCarta(Carta[] cartaMesa, Carta[] cartasJogador, int equipe, int indiceMaoCorrente) {
-
-		Carta cartaAdversario = getMaiorCarta(cartaMesa);
-		
-		if(cartaAdversario.getEquipe() != equipe) {
-			return matarCarta(cartaAdversario, cartasJogador);
-		}
-	
-		Carta cartaRetorno = getMenorCarta(cartasJogador); 
-		
-		if(indiceMaoCorrente > 0) {
-			cartaRetorno.setEncobrirCarta(true);
-		}
-		
-		return cartaRetorno;
-	}
-	
-	private static Carta matarCarta(Carta cartaMesa, Carta[] cartasJogador) {
-		
-		Carta cartaRetorno = null;
-		
-		for (Carta carta : cartasJogador) {
-			
-			if(cartaRetorno == null) {
-				if (carta.getValor() >= cartaMesa.getValor()) {
-					cartaRetorno = carta;
-				}
-			}else{
-				if (carta.getValor() >= cartaMesa.getValor() && carta.getValor() < cartaRetorno.getValor()) {
-					cartaRetorno = carta;
-				}
-			}
-		}
-
-		if(cartaRetorno == null) {
-			return getMenorCarta(cartasJogador);
-		}
-		
-		return null;
-	}
-
 	public int getValor() {
 		return valor;
 	}
